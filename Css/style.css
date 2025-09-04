@@ -473,7 +473,7 @@ header{
     background-color: var(--main-bg-color);
     width: 100%;
     position: relative;
-    padding: 40px 0px;
+    padding: 0px 0px;
 }
 
 .testi-wrap{
@@ -483,7 +483,8 @@ header{
 }
 
 .testi-head{
-    padding: 0px 0px 40px 100px;
+    padding: 0px 0px 50px 7%;
+
 }
 .testi-dot{
     height: 9px;
@@ -1163,6 +1164,26 @@ header{
     .w-heads h1.h-active{
         padding-left: 8px;
     }
+
+    /* testimonials */
+
+    .testi-dot{
+    height: 7px;
+    width: 7px;
+    margin: 2px 0px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.testi-head h2{
+    display: inline-block;
+    font-family: neu-roman;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: uppercase;
+    padding-left: 3px;
+}
 
 }
 
