@@ -849,11 +849,13 @@ header{
 
 @media (max-width: 480px){
     .banner{
-        padding: 40px 20px 70px 20px;
+        padding: 40px 20px 50px 20px;
+        height: fit-content;
     }
     .b-wrap{
-        padding: 0px 0px 50px 0px;
+        padding-bottom: 50px;
         flex-direction: column;
+        row-gap: 80px;
     }
     .b-con-l{
         width: 100%;
@@ -874,6 +876,7 @@ header{
 }
 .showcase{
     position: relative;
+
 }
 .s-video{
     width: 100%;
@@ -888,6 +891,9 @@ header{
 }
 
 /* about */
+.about{
+    padding: 40px 0px;
+}
 .a-wrapper{
     padding: 100px 40px 0px 40px;
 }
@@ -967,7 +973,7 @@ header{
 }
 
 .pro-foot{
-    padding: 30px 0px;
+    padding: 30px 0px 0px 0px;
 }
 .pro-foot .h4{
     font-size: 16px;
@@ -975,6 +981,7 @@ header{
 }
 /* work */
 .work{
+    padding: 40px 20px;
     position: relative;
 }
 .w-wrap{
@@ -1009,15 +1016,18 @@ header{
     font-size: 16px;
     line-height: 18px;
 }
-
+.testi-head{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
 }
 @media (max-width: 400px){
     .banner{
-        padding: 40px 20px 70px 20px;
+        padding: 40px 20px 40px 20px;
     }
     .b-wrap{
         width: 100%;
-        padding: 0px 0px 50px 0px;
+        padding: 0px 0px 30px 0px;
     }
     .b-con-l{
         width: 100%;
@@ -1132,6 +1142,9 @@ header{
 
 }
 @media (max-width: 380px){
+    .showcase{
+        padding: 40px 20px;
+    }
     .a-wrapper{
         padding: 40px 20px 0px 20px;
     }
