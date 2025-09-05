@@ -40,7 +40,17 @@ function work() {
         })
     })
 };
-function responsivenavbar() {
+
+
+var navbar = document.querySelector(".nav-bar");
+function closenav() {
+    navbar.style.animation = "hide-menu .4s ease-out .0s forwards";
+    setTimeout(function () {
+        navbar.style.display = "none";
+    }, 500);
+
+}
+function shownavbar() {
     var showicon = document.querySelector(".nav-open");
     var closeicon = document.querySelector(".nav-close");
     var navbar = document.querySelector(".nav-bar");
@@ -50,27 +60,42 @@ function responsivenavbar() {
         if (n == 0) {
             n = 1;
             navbar.style.display = "flex";
-            navbar.style.animation = "show-menu .6s ease-out .0s forwards";
+            navbar.style.animation = "show-menu .4s ease-out .0s forwards";
         }        
         else{
             n = 0;
-            navbar.style.animation = "hide-menu .6s ease-out .0s forwards";
-            setTimeout(function () {
-                navbar.style.display = "none";
-            }, 600);
+            closenav();
         }
-    });
-
-    closeicon.addEventListener("click", () => {
-        navbar.style.animation = "hide-menu .6s ease-out .0s forwards";
-        setTimeout(function () {
-            navbar.style.display = "none";
-        }, 600);
-
     });
 }
 
-responsivenavbar();
+function closenavber(){
+    var showicon = document.querySelector(".nav-open");
+    var closeicon = document.querySelector(".nav-close");
+    var navbar = document.querySelector(".nav-bar");
+    var navicon = document.querySelector(".nav-icons");
+    var navlinks = document.querySelectorAll(".nav-bar .h4");
+    closeicon.addEventListener("click", () => {
+        closenav();
+    });
+
+    navlinks.forEach(link => {
+        link.addEventListener('click', () => {
+            closenav();
+        })
+    });
+
+    document.addEventListener('click', function (e) {
+        const isClickInside = navbar.contains(e.target) || navicon.contains(e.target);
+        if (!isClickInside) {
+            closenav();
+        }
+    });
+}
+
+
+shownavbar();
+closenavber();
 image();
 work();
 

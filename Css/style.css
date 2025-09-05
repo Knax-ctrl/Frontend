@@ -1421,8 +1421,8 @@ header {
 
 @keyframes show-menu {
     from{
-        opacity: 0;
-        filter: blur(15px);
+        opacity: .7;
+        filter: blur(2px);
         transform: translateX(100%);        
     }
     to{
@@ -1438,8 +1438,8 @@ header {
         transform: translateX(0px);
     }
     to{
-        filter: blur(15px);
-        opacity: 0;
+        filter: blur(2px);
+        opacity: .7;
         transform: translateX(100%);
     }
 }
