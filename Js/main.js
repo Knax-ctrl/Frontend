@@ -1,14 +1,14 @@
 
-function image(){
+function image() {
     var fixedimage = document.querySelector(".fixed-image");
     var elems = document.querySelectorAll(".elem");
 
-elems.forEach(function(e){
-    e.addEventListener("mouseenter", function(){
-        var imgdta = e.getAttribute("dta");
-        fixedimage.style.backgroundImage = `url(${imgdta})`;
-       })
-})
+    elems.forEach(function (e) {
+        e.addEventListener("mouseenter", function () {
+            var imgdta = e.getAttribute("dta");
+            fixedimage.style.backgroundImage = `url(${imgdta})`;
+        })
+    })
 };
 
 function work() {
@@ -40,16 +40,46 @@ function work() {
         })
     })
 };
+function responsivenavbar() {
+    var showicon = document.querySelector(".nav-open");
+    var closeicon = document.querySelector(".nav-close");
+    var navbar = document.querySelector(".nav-bar");
+    let n = 0;
 
+    showicon.addEventListener("click", () => {
+        if (n == 0) {
+            n = 1;
+            navbar.style.display = "flex";
+            navbar.style.animation = "show-menu .6s ease-out .0s forwards";
+        }        
+        else{
+            n = 0;
+            navbar.style.animation = "hide-menu .6s ease-out .0s forwards";
+            setTimeout(function () {
+                navbar.style.display = "none";
+            }, 600);
+        }
+    });
+
+    closeicon.addEventListener("click", () => {
+        navbar.style.animation = "hide-menu .6s ease-out .0s forwards";
+        setTimeout(function () {
+            navbar.style.display = "none";
+        }, 600);
+
+    });
+}
+
+responsivenavbar();
 image();
 work();
 
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: "auto",
-      centeredSlides: true,
-      spaceBetween: 30,
-      pagination: {
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: "auto",
+    centeredSlides: true,
+    spaceBetween: 30,
+    pagination: {
         el: ".swiper-pagination",
         clickable: true,
-      },
-    });
+    },
+});

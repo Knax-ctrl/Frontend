@@ -119,6 +119,7 @@ header {
     font-size: 24px;
 }
 
+
 .section {
     min-height: fit-content;
     overflow-x: hidden;
@@ -766,21 +767,20 @@ header {
     }
 
     .nav-bar {
-        display: block;
-        display: flex;
         flex-direction: column;
         row-gap: 30px;
         position: absolute;
         right: 0;
         top: 200%;
         background-color: #EFEAE3;
-        padding: 50px 20px 60px 20px;
+        padding: 0px 20px 60px 20px;
         border-top: 2px solid #ffc16b;
         border-left: 2px solid #ffc16b;
         border-bottom: 2px solid #ffc16b;
         border-top-left-radius: 20px;
         border-bottom-left-radius: 20px;
         width: 30%;
+        display: none;
     }
 
     .nav-bar .h4 {
@@ -799,8 +799,23 @@ header {
 
     .nav-icons {
         display: block;
-
     }
+
+    .nav-bar i{
+        display: block;
+        align-self: flex-end;
+        margin-top: 10%;
+        font-size: 18px;
+    }
+    /* .nav-active{
+        display: flex;
+        animation: show-menu .5s ease-out .0s forwards;
+    }
+    .nav-close{
+        animation: hide-menu .5s ease-in .0s forwards;
+        
+    }
+ */
 
 
 
@@ -976,18 +991,20 @@ header {
 
 @media (max-width: 480px) {
     /*navbar */
-        .nav-bar .h4 {
+    .nav-bar{
+        top: 150%;
+    }
+    .nav-bar .h4 {
         border: 0px;
         border-bottom: 2px solid #00000071;
         border-radius: 0px;
         font-size: 18px;
         font-weight: 700;
         text-decoration: none;
-        padding: 0px 15px;
+        padding: 3px 15px 0px 15px;
         position: relative;
         overflow: hidden;
-        transition: all .2s ease;
-        
+        transition: all .2s ease;        
     }
 
     /* banner */
@@ -1398,4 +1415,31 @@ header {
         padding-left: 3px;
     }
 
+}
+
+/* animations */
+
+@keyframes show-menu {
+    from{
+        opacity: 0;
+        filter: blur(15px);
+        transform: translateX(100%);        
+    }
+    to{
+        filter: blur(0px);
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+@keyframes hide-menu {
+    from{
+        filter: blur(0px);
+        opacity: 1;
+        transform: translateX(0px);
+    }
+    to{
+        filter: blur(15px);
+        opacity: 0;
+        transform: translateX(100%);
+    }
 }
