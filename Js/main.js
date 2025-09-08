@@ -95,7 +95,11 @@ function closenavber(){
 
 
 shownavbar();
-closenavber();
+
+if (window.innerWidth <= 670){
+    closenavber();
+}
+
 image();
 work();
 
